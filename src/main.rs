@@ -6,8 +6,9 @@
 #![cfg_attr(target_os = "none", no_main)]
 
 extern crate shield;
-use shield::println;
+use sentry_uapi::systypes::Status;
 use sentry_uapi::*;
+use shield::println;
 
 #[cfg(target_os = "none")]
 shield::shield_main!();
@@ -15,7 +16,8 @@ shield::shield_main!();
 fn main() {
     println!("Hello, World !");
     match sentry_uapi::syscall::get_shm_handle(0xF00 as u32) {
-    Status::Ok => (),
-    any_err => return (any_err),
-}
+        Status::Ok => {
+            println!("Got shm handle")
+        }
+    }
 }
