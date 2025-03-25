@@ -17,7 +17,7 @@ fn main() {
     println!("Hello, World !");
     match sentry_uapi::syscall::get_shm_handle(0xF00 as u32) {
         Status::Ok => {
-            let mut handle :&mut [u8] = &mut [0];
+            let mut handle :&mut [u8; 4] = &mut [0; 4];
             //TODO: handle bad status
             let _ = copy_from_kernel(&mut handle);
             //handle.set_persistent();
