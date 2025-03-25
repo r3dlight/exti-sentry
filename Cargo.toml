@@ -9,7 +9,7 @@ opt-level = "s"
 
 [dependencies]
 shield = "0.1"
-sentry_uapi = "0.4.1"
+sentry-uapi = "0.4.1"
 
 [build-dependencies]
 outpost_metadata =  "0.1"
