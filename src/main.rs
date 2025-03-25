@@ -19,5 +19,6 @@ fn main() {
         Status::Ok => {
             println!("Got shm handle")
         }
+        _ => todo!(),
     }
 }
