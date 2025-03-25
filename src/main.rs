@@ -19,7 +19,7 @@ fn main() {
         Status::Ok => {
             let mut handle :&mut [u8; 4] = &mut [0; 4];
             //TODO: handle bad status
-            let _ = copy_from_kernel(&mut handle);
+            let _ = copy_from_kernel(&mut handle[..]);
             //handle.set_persistent();
             println!("Got shm handle: {:?}", handle);
         }
