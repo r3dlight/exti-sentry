@@ -17,7 +17,9 @@ fn main() {
     println!("Hello, World !");
     match sentry_uapi::syscall::get_shm_handle(0xF00 as u32) {
         Status::Ok => {
-            println!("Got shm handle")
+            let exch_area = unsafe { &mut SVC_EXCHANGE_AREA[..4] };
+            let handle = u32::from_ne_bytes(exch_area.try_into().map_err(|_| Status::Invalid)?);
+            println!("Got shm handle");
         }
         _ => todo!(),
     }
