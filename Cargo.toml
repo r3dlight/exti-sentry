@@ -8,8 +8,8 @@ lto = true
 opt-level = "s"
 
 [dependencies]
-shield = "0.1"
-sentry-uapi = "0.4.1"
+shield = { git = "https://github.com/r3dlight/shield"}
+sentry-uapi = { git = "https://github.com/camelot-os/sentry-kernel", path="./uapi"}
 
 [build-dependencies]
-outpost_metadata =  "0.1"
+sentry_package_metadata =  {git = "https://github.com/camelot-os/sentry-package-metadata"}
