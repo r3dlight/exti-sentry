@@ -8,7 +8,7 @@ lto = true
 opt-level = "s"
 
 [dependencies]
-#shield = { git = "https://github.com/r3dlight/shield"}
+shield = { git = "https://github.com/r3dlight/shield"}
 sentry-uapi = { git = "https://github.com/camelot-os/sentry-kernel/"}
 
 [build-dependencies]

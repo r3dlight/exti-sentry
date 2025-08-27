@@ -8,7 +8,7 @@
 //extern crate shield;
 use sentry_uapi::systypes::Status;
 use sentry_uapi::*;
-//use shield::println;
+use shield::println;
 
 #[cfg(target_os = "none")]
 shield::shield_main!();
