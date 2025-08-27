@@ -10,8 +10,14 @@
 //use sentry_uapi::*;
 use shield::println;
 use shield::process::get_process_handle;
-//use sentry_uapi::systypes::Status;
+use sentry_uapi::systypes::Status;
 use shield::*;
+use core::panic::PanicInfo;
+
+#[panic_handler]
+fn panic(_info: &PanicInfo) -> ! {
+    loop {}
+}
 
 #[cfg(target_os = "none")]
 shield::shield_main!();
