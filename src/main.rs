@@ -9,16 +9,16 @@
 //use sentry_uapi::systypes::Status;
 //use sentry_uapi::*;
 use shield::println;
-use shield::syscall::copy_from_kernel;
-use sentry_uapi::systypes::Status;
-use sentry_uapi::*;
+use shield::get_process_handle;
+//use sentry_uapi::systypes::Status;
+use shield::*;
 
 #[cfg(target_os = "none")]
 shield::shield_main!();
 
 fn main() {
-    //println!("Hello, World !");
-    match sentry_uapi::syscall::get_shm_handle(0xF00 as u32) {
+    println!("Hello, World !");
+    match get_shm_handle(0x5555 as u32) {
         Status::Ok => {
             let mut handle: &mut [u8; 4] = &mut [0; 4];
             //TODO: handle bad status
@@ -26,6 +26,6 @@ fn main() {
             //handle.set_persistent();
             //println!("Got shm handle: {:?}", handle);
         }
-        _ => todo!(),
+        _ => println!("No task handle"),
     }
 }
