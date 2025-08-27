@@ -2,7 +2,7 @@
 //
 // SPDX-FileCopyrightText: 2024 Ledger SAS
 
-use std::env;
+/*use std::env;
 
 fn main() {
     let metadata =
@@ -13,4 +13,4 @@ fn main() {
         env::var("config").ok().as_deref(),
         None,
     );
-}
+}*/
