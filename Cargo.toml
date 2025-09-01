@@ -9,7 +9,7 @@ opt-level = "s"
 
 [dependencies]
 shield = { git = "https://github.com/r3dlight/shield"}
-sentry-uapi = { git = "https://github.com/camelot-os/sentry-kernel/"}
+#sentry-uapi = { git = "https://github.com/camelot-os/sentry-kernel/"}
 
 [build-dependencies]
 camelot_metadata =  {git = "https://github.com/camelot-os/sentry-package-metadata"}
