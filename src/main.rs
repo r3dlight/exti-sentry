@@ -20,7 +20,7 @@ shield::shield_main!();
 fn main() {
     println!("Hello, World !");
     match get_process_handle(0x5555 as u32) {
-        Ok(Status::Ok) => {
+        Ok(handle) => {
             println!("Got task handle");
             //let mut handle: &mut [u8; 4] = &mut [0; 4];
             //TODO: handle bad status
