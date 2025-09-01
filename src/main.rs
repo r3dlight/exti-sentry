@@ -11,6 +11,7 @@
 use shield::println;
 use shield::process::get_process_handle;
 use shield::Status;
+use core::prelude::rust_2024::Ok;
 //use shield::*;
 
 #[cfg(target_os = "none")]
@@ -19,7 +20,8 @@ shield::shield_main!();
 fn main() {
     println!("Hello, World !");
     match get_process_handle(0x5555 as u32) {
-        Status::Ok => {
+        Ok(Status::Ok) => {
+            println!("Got task handle");
             //let mut handle: &mut [u8; 4] = &mut [0; 4];
             //TODO: handle bad status
             //let _ = copy_from_kernel(&mut handle[..]);
